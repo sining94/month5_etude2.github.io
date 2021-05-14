@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body,
+        html {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            font-family: "Arial";
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        header {
+            width: 100%;
+            height: 126px;
+            position: absolute;
+        }
+
+        header>a>img {
+            width: 150px;
+            height: 31px;
+            float: left;
+            margin-top: 40px;
+            margin-left: 200px;
+
+        }
+
+        nav {
+            float: right;
+            margin-right: 180px;
+            margin-top: 50px;
+        }
+
+        nav>div {
+            float: left;
+            margin-right: 50px;
+        }
+
+        nav>div>a {
+            color: #fff;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav>div>a:hover {
+            color: #615cfd;
+        }
+
+        footer {
+            width: 100%;
+            height: 350px;
+            margin-top: 100px;
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        #footer-basic {
+            width: 60%;
+            height: 300px;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        #footer-logo {
+            width: 150px;
+            height: 30px;
+            background-image: url("vlab-white.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-top: 80px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        #footer-basic>select {
+            width: 80px;
+            height: 35px;
+            background: black;
+            color: white;
+            margin-left: 35px;
+            border-radius: 5px;
+            float: left;
+        }
+
+        #footer-basic>ul>li {
+            width: 150px;
+            height: 30px;
+            margin-left: 20px;
+            float: left;
+            font-size: 16px;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 500;
+            font-family: "Roboto";
+            margin-top: 20px;
+            transition: 2s;
+            opacity: 0;
+        }
+
+        #footer-basic>ul>li>ul>li {
+            font-size: 14px;
+            font-weight: 200;
+            font-family: "Arial";
+        }
+
+        #top-menu {
+            width: 100%;
+            position: fixed;
+            height: 100px;
+            top: -530px;
+            left: 0;
+            background: #fff;
+            box-shadow: 0px 0px 5px gray;
+            transition: 1s;
+
+        }
+
+        #top-menu>img {
+            margin-left: 80px;
+            margin-top: 50px;
+            width: 150px;
+            height: 30px;
+            display: inline-block;
+        }
+
+        #top-menu>ul {
+            width: 500px;
+            height: 30px;
+            float: right;
+            margin-top: 50px;
+            margin-right: 200px;
+        }
+
+        #top-menu>ul>li {
+            font-family: "Arial";
+            font-weight: 600;
+            text-align: center;
+            line-height: 30px;
+            width: 100px;
+            height: 30px;
+            float: left;
+        }
+
+        #mini {
+            width: 150px;
+            height: 250px;
+            margin-top: 50px;
+            opacity: 0;
+            transition: 0.7s;
+            border-radius: 5px;
+        }
+
+        #mini>li {
+            background: #fff;
+            color: #000;
+            font-family: "Arial";
+            font-weight: 600;
+            font-size: 1em;
+            height: 50px;
+            width: 100%;
+        }
+
+        header>nav>div:nth-child(3) {
+            position: relative;
+        }
+
+        #top-mini {
+            position: absolute;
+            top: 65px;
+            left: -40px;
+            width: 150px;
+            height: 250px;
+            background: #fff;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        #top-mini>li {
+            background: #fff;
+            color: #000;
+            font-family: "Arial";
+            font-weight: 600;
+            font-size: 1em;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #sec1 {
+            width: 100%;
+            height: 700px;
+            background-image: url("about.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top right;
+        }
+
+        #sec1>h4 {
+            margin: 0;
+            margin-top: 420px;
+            margin-left: 400px;
+            display: inline-block;
+            font-size: 30px;
+            font-weight: 600;
+            color: #fff;
+            font-family: 'Arial';
+            letter-spacing: 2px;
+            text-align: left;
+            width: 50%;
+            transition: 1s;
+            opacity: 0;
+        }
+
+        #sec1>p {
+            font-size: 16px;
+            margin-left: 400px;
+            margin-top: 40px;
+            width: 900px;
+            color: #fff;
+            transition: 1s;
+            opacity: 0;
+        }
+
+        #sec1>div {
+            width: 125px;
+            height: 50px;
+            background: #615cfd;
+            color: #fff;
+            font-family: "Arial";
+            font-weight: 600;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 25px;
+            margin-left: 400px;
+            margin-top: 30px;
+            opacity: 0;
+            transition: 0.5s;
+            border: 1px solid #615cfd;
+        }
+
+        #sec1>div:hover {
+            cursor: pointer;
+            background: none;
+            color: #615cfd;
+        }
+
+        #sec2 {
+            width: 60%;
+            height: 400px;
+            margin: auto;
+            margin-top: 100px;
+        }
+        #sec2 > div {
+            margin-top: 50px;
+        }
+        #sec2 > div:nth-child(1) {
+            width: 35%;
+            float: left;
+            color: #615cfd;
+            font-size: 35px;
+            font-family: "Arial";
+            opacity: 0;
+            transition: 1s;
+
+        }
+        #sec2 > div > h4 {
+            font-family: "Roboto";
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0;
+        }
+        #sec2 > div:nth-child(2) {
+            width: 65%;
+            float: left;
+            opacity: 0;
+            transition: 1s;
+        }
+        #sec2 p {
+            margin-top: 0;
+        }
+        #sec2 > div:nth-child(2) > p {
+            font-size: 16px;
+            font-family: "Poppins";
+            font-weight: 600;
+            word-spacing: 5px;
+            line-height: 30px;
+        }
+
+        #sec3 {
+            width: 100%;
+            margin-top: 50px;
+            background: #f8f9fa;
+        }
+        #sec3 > #sec3_wrap {
+            width: 60%;
+            height: 500px;
+            margin: auto;
+        }
+        #sec3_wrap > div {
+            float: left;
+        }
+        #sec3_left {
+            width: 30%;
+            margin-top: 50px;
+            opacity: 0;
+            transition: 1s;
+
+        }
+        #sec3_right {
+            width: 70%;
+            margin-top: 50px;
+            opacity: 0;
+            transition: 1s;
+        }
+        #sec3_left > h4 {
+            font-size: 24px;
+            font-family: "Roboto";
+            font-weight: 400;
+            margin: 0;
+            margin-top: 80px;
+            color: #615cfd;
+        }
+        #sec3_left > p {
+            transform: translateY(20px);
+            font-size: 14px;
+            line-height: 30px;
+            color: gray;
+        }
+        #sec3_right > p {
+            margin: 0;
+            display: block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+            line-height: 2;
+        }
+        #sec3_right > p:nth-child(1) {
+            margin-top: 80px;
+        }
+        #sec4 {
+            width: 60%;
+            height: 1300px;
+            margin: auto;
+        }
+        #sec4 > h4 {
+            width: 100%;
+            text-align: center;
+            font-size: 25px;
+        }
+        #sec4 > #container {
+            position: relative;
+        }
+        #sec4> #container:after {
+            content: "";
+            display: block;
+            clear: both;
+            width: 5px;
+            height: 1200px;
+            z-index: -999;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background: #C5CAE9;
+        }
+
+
+        #con1::after , #con3::after,  #con5::after {
+            content: "";
+            display: block;
+            clear: both;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #3F51B5;
+            position: absolute;
+            right: -11%;
+            top: 45%;
+        }
+        #con1 , #con3 , #con5{
+            position: relative;
+            display: block;
+            width: 530px;
+            height: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            color: #fff;
+            margin-left: -100px;
+            opacity: 0;
+            transition: 1s;
+        }
+        #con1 > div, #con3> div, #con5 > div {
+            width: 108px;
+            height: 36px;
+            background: #615CFD;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            text-align: center;
+            line-height: 36px;
+            font-family: "Roboto";
+        }
+        #con1 > h5 , #con3 > h5 , #con5 > h5 {
+            font-size: 18px;
+            display: inline-block;
+            margin: 0;
+            margin-top: 100px;
+            font-family: "Roboto";
+            font-weight: 500;
+            transform: translateX(10px);
+        }
+        #con1 > p ,#con3 > p , #con5 > p {
+            display: inline-block;
+            font-size: 16px;
+            font-family: "Arial";
+            transform: translateX(10px);
+        }
+        
+
+
+        #con2::after , #con4::after ,  #con6::after {
+            content: "";
+            display: block;
+            clear: both;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #3F51B5;
+            position: absolute;
+            left: -10%;
+            top: 45%;
+        }
+        #con2 ,  #con4 ,  #con6 {
+            float: right;
+            position: relative;
+            display: block;
+            width: 530px;
+            height: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            color: #fff;
+            margin-right: -100px;
+            opacity: 0;
+            transition: 1s;
+        }
+        #con2 > div ,  #con4 > div, #con6 > div {
+            width: 108px;
+            height: 36px;
+            background: #615CFD;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            text-align: center;
+            line-height: 36px;
+            font-family: "Roboto";
+        }
+        #con2 > h5 ,#con4 > h5 , #con6 > h5 {
+            font-size: 18px;
+            display: inline-block;
+            margin: 0;
+            margin-top: 100px;
+            font-family: "Roboto";
+            font-weight: 500;
+            transform: translateX(10px);
+        }
+        #con2 > p , #con4 > p, #con6 > p{
+            display: inline-block;
+            font-size: 16px;
+            font-family: "Arial";
+            transform: translateX(10px);
+        }
+        #con1 {
+            background-image: url("1.jpg");
+        }
+        #con2 {
+            background-image: url("2.jpg");
+        }
+        #con3 {
+            background-image: url("3.jpg");
+            margin-top: 200px;
+        }
+        #con4 {
+            background-image: url("4.jpg");
+        }
+        #con5 {
+            background-image: url("5.jpg");
+            margin-top: 200px;
+        }
+        #con6 {
+            background-image: url("6.jpg");
+        }
+        
+
+        
+
+    </style>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                var n = $(window).scrollTop();
+                console.log(n);
+                if (n > 2500) {
+                    $("#footer-basic>ul>li").css({ "marginTop": "0px", "opacity": "1" });
+                }
+                else if (n > 2000) {
+                    $("#con6").css({"marginRight":"0px", "opacity":"1"});
+
+                }
+                else if (n > 1800) {
+                    $("#con5").css({"marginLeft":"0px", "opacity":"1"});
+
+                }
+                else if (n > 1600) {
+                    $("#con4").css({"marginRight":"0px", "opacity":"1"});
+
+                }
+                else if (n > 1400) {
+                    $("#con3").css({"marginLeft":"0px", "opacity":"1"});
+
+                }
+                else if (n > 1200) {
+                    $("#con2").css({"marginRight":"0px", "opacity":"1"});
+
+                }
+                else if (n > 1000) {
+                    $("#con1").css({"marginLeft":"0px", "opacity":"1"});
+
+                }
+                else if ( n > 400) {
+                    $("#sec3_left, #sec3_right").css({"opacity":"1", "marginTop":"0"});
+                }
+                else if (n > 100) {
+                    $("#top-menu").css({ "top": "0" });
+                }
+                else if (n == 0) {
+                    $("#top-menu").css({ "top": "-520px" });
+                }
+            });
+            setTimeout(function () {
+                $("body, html").animate({ "scrollTop": "0px" });
+                $("#sec1 > h4").css({ "marginTop": "350px", "opacity": "1" });
+                $("#sec1 > p").css({ "marginTop": "20px", "opacity": "1" });
+                $("#sec1 > div").css({ "opacity": "1" });
+                $("#sec2 > div").eq(0).css({"opacity":"1"});
+                $("#sec2 > div").eq(1).css({"opacity":"1"});
+            });
+            $("#top-menu > ul> li").eq(2).hover(function () {
+                $("#mini").css({ "marginTop": "35px", "opacity": "1" });
+            }, function () {
+                $("#mini").css({ "marginTop": "50px", "opacity": "0" });
+            });
+            $("header > nav >div").eq(2).hover(function () {
+                $("#top-mini").css({ "top": "45px", "opacity": "1" });
+            }, function () {
+                $("#top-mini").css({ "top": "65px", "opacity": "0" });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="#"><img src="vlab-white.png" alt="logo"></a>
+        <nav>
+            <div><a href="https://sining94.github.io/month5_etude1.github.io/">Home</a></div>
+            <div><a href="https://sining94.github.io/month5_etude2.github.io/">About</a></div>
+            <div><a href="https://sining94.github.io/month5_etude3.github.io/">Services</a>
+                <ul id="top-mini">
+                    <li><a href="https://sining94.github.io/month5_etude3.github.io/">Services</a></li>
+                    <li>Materials Square</li>
+                    <li>MAXFlops</li>
+                    <li>SimPL</li>
+                    <li>Consulting</li>
+                </ul>
+            </div>
+            <div><a href="#">News</a></div>
+            <div><a href="#">Contact</a></div>
+        </nav>
+    </header>
+    <section id="sec1">
+        <h4>Virtual Lab provides cutting-edge IT technology for<br> material researchers.
+        </h4>
+        <p>Based on proven technology with many years of participation in national challenges, we provide material
+            simulation platform Materials Square and<br> unlimited cloud delivery solution MAXFlops and cutting-edge
+            services related to various simulations.
+        </p>
+        <div>See More</div>
+    </section>
+    <section id="sec2">
+        <div>
+            <h4>MISSION</h4>
+        </div>
+        <div>
+            <p>Our mission is to create services that users can easily simulate materials with minimal effort, and
+                furthermore, to create “square of materials” gathering all information about materials around the
+                world .</p>
+            <p>In addition, we are trying to activate the Korean material industry and to help those who want to
+                start material simulation by sharing various information for free through a technology blog and
+                running MatSQ forum.</p>
+        </div>
+
+    </section>
+    <section id="sec3">
+        <div id="sec3_wrap">
+            <div id="sec3_left">
+                <h4>Major National R&D Tasks</h4>
+                <p>Virtual Lab plays a central role in various national projects related to material simulation.</p>
+            </div>
+            <div id="sec3_right">
+                <p>- Development of web-based multi-scale simulation platform for efficient design of nanomaterials for energy, Korea Evaluation Institute of Industrial Technology, 2017</p>
+                <p>- Development of electronic research note KiRI Note for researchers, Korea Institute of Science and Technology, 2018</p>
+                <p>- Development of software for web platform application of nanomaterial computational simulation for electrodes, Korea Institute of Energy Research, 2018</p>
+                <p>- Development of web-based computational science platform framework SimPL, Ministry of Science and ICT, 2019 ~</p>
+                <p>- Machine learning based alloy powder design and manufacturing platform development using plasma high temperature reduction method, Korea Evaluation Institute of Industrial Technology, 2019 ~</p>
+                <p>- Researcher Behavior-based R & D Big Data Collection and Utilization Framework Development, Ministry of Science and ICT, 2019 ~</p>
+            </div>
+        </div>
+        
+
+    </section>
+    <section id="sec4">
+        <h4>TIMELINE</h4>
+        <div id="container">
+            <div id="con1">
+                <div><span>Jan 28, 2016</span></div>
+                <h5>Incorporation</h5>
+                <p>Virtual Lab was founded on Jan 28, 2016 and is based in Seoul, South Korea.</p>
+            </div>
+            <div id="con2">
+                <div><span>Jan 13, 2017</span></div>
+                <h5>Materials Square 1.0 Released</h5>
+                <p>The first service, Materials Square, for cloud-based atomic modeling and material simulation was released.</p>
+            </div>
+            <div id="con3">
+                <div><span>Feb 22, 2017</span></div>
+                <h5>The 1st MatSQ User Meeting</h5>
+                <p>Introduced the service for the first time to about 30 users, and had a time to conduct the simulation.</p>
+            </div>
+            <div id="con4">
+                <div><span>Dec 29, 2017</span></div>
+                <h5>Selected as K-Global 300</h5>
+                <p>Selected as a promising Korean ICT company(K-Global) by the Ministry of Science and ICT.</p>
+            </div>
+            <div id="con5">
+                <div><span>Jan 30, 2018</span></div>
+                <h5>Materials Square 2.0 Released</h5>
+                <p>Materials Square 2.0 was officially released on January 30, 2018.</p>
+            </div>
+            <div id="con6">
+                <div><span>Sep 15, 2018</span></div>
+                <h5>MAXFlops Launched</h5>
+                <p>MAXFlops, which provides a large amount of cloud servers immediately, was officially launched.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div id="footer-basic">
+            <div id="footer-logo"></div>
+            <select name="" id="">
+                <option value="">Select</option>
+                <option value="">한국어</option>
+                <option value="">English</option>
+            </select>
+            <ul>
+                <li>About</li>
+                <li>Services
+                    <ul>
+                        <li>MatSQ</li>
+                        <li>MAXFlops</li>
+                        <li>SimPL</li>
+                        <li>Consulting</li>
+                    </ul>
+                </li>
+                <li>News</li>
+                <li>Contact</li>
+                <li>Links
+                    <ul>
+                        <li>TechBlog</li>
+                        <li>FaceBook</li>
+                        <li>Youtube</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+    <div id="top-menu">
+        <img src="vlab-red.png" alt="">
+        <ul>
+            <li>Contact</li>
+            <li>News</li>
+            <li><a href="https://sining94.github.io/month5_etude3.github.io/">Services</a>
+                <ul id="mini">
+                    <li><a href="https://sining94.github.io/month5_etude3.github.io/">Services</a></li>
+                    <li>Materials Square</li>
+                    <li>MAXFlops</li>
+                    <li>SimPL</li>
+                    <li>Consulting</li>
+                </ul>
+            </li>
+            <li><a href="https://sining94.github.io/month5_etude2.github.io/">About</a></li>
+            <li><a href="https://sining94.github.io/month5_etude1.github.io/">Home</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
